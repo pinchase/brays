@@ -89,8 +89,8 @@
 
 <section class="section section-muted">
     <div class="container section-heading">
-        <p class="eyebrow">Brands</p>
-        <h2>Brand work under {{ client.name }}.</h2>
+        <p class="eyebrow"></p>
+        <h2>Brands under {{ client.name }}.</h2>
     </div>
     <div class="container">
         {% if brands %}
@@ -100,7 +100,7 @@
                         {% if brand.logo %}
                             <img src="{{ brand.logo.url }}" alt="{{ brand.name }}" loading="lazy">
                         {% else %}
-                            <span class="placeholder">{{ brand.name }}</span>
+                            <span class="placeholder eyebrow">{{ brand.name }}</span>
                         {% endif %}
                         <strong>{{ brand.name }}</strong>
                         {% if brand.caption %}

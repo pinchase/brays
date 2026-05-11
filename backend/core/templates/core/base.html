@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Braymell delivers route-to-market strategy, retail execution, and brand growth support.">
     <title>{% block title %}{{ page_title|default:"Braymell" }}{% endblock %}</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{% static 'images/logo.jpeg' %}">
+    
     <link rel="stylesheet" href="{% static 'css/style.css' %}?v=20260505a">
     {% block extra_css %}{% endblock %}
 </head>
