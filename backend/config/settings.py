@@ -15,6 +15,13 @@ import dj_database_url
 import os
 import cloudinary
 
+
+cloudinary.config(
+    cloud_name=os.environ.get('CLOUDINARY_CLOUD_NAME'),
+    api_key=os.environ.get('CLOUDINARY_API_KEY'),
+    api_secret=os.environ.get('CLOUDINARY_API_SECRET'),
+)
+
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': os.environ.get('CLOUDINARY_CLOUD_NAME'),
     'API_KEY': os.environ.get('CLOUDINARY_API_KEY'),
@@ -170,7 +177,7 @@ SPECTACULAR_SETTINGS = {
 
 CORS_ALLOWED_ORIGINS = []
 
-ALLOWED_HOSTS = ['https://brays.onrender.com']
+ALLOWED_HOSTS = ['brays.onrender.com']
 
 CORS_ALLOW_CREDENTIALS = True
 
@@ -192,9 +199,6 @@ CORS_EXPOSE_HEADERS = [
     'x-csrftoken',
 ]
 
-# Media files (User uploads)
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
 
 # API Versioning
 API_VERSION = 'v1'
@@ -265,3 +269,8 @@ JAZZMIN_UI_TWEAKS = {
     "action_button_style": "squared-0",
     "actions_sticky_top": True,
 }
+CKEDITOR_UPLOAD_PATH = "uploads/"
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://brays.onrender.com",
+]
